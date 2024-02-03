@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create virtualenv
+      ansible.builtin.pip:
+        name:
+          - ansible-core=={{item}}
+          - ansible-lint
+          - molecule
+          - yamllint
+        virtualenv: ~/ansible-core-{{item}}
+      loop:
+        - 2.14.4
+        - 2.15.9
+        - 2.16.3
+        - 2.13.13
