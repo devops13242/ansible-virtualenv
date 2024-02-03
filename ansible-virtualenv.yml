@@ -8,6 +8,7 @@
           - ansible-core=={{item}}
           - ansible-lint
           - molecule
+          - molecule-plugins[podman]
           - yamllint
         virtualenv: ~/ansible-core-{{item}}
       loop:
